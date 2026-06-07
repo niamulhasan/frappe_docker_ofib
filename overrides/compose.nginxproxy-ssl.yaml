@@ -7,8 +7,8 @@ services:
     labels:
       com.github.nginx-proxy.nginx: "true"
     ports:
-      - ${HTTP_PUBLISH_PORT:-80}:80
-      - ${HTTPS_PUBLISH_PORT:-443}:443
+      - ${HTTP_PUBLISH_PORT:-3902}:80
+      - ${HTTPS_PUBLISH_PORT:-3903}:443
 
   acme-companion:
     image: nginxproxy/acme-companion:latest

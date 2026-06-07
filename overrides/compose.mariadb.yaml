@@ -2,7 +2,7 @@ services:
   configurator:
     environment:
       DB_HOST: db
-      DB_PORT: "3306"
+      DB_PORT: "3906"
     depends_on:
       db:
         condition: service_healthy
