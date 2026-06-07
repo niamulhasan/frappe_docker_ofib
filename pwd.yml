@@ -6,6 +6,13 @@ services:
     deploy:
       restart_policy:
         condition: on-failure
+    command:
+      - bench
+      - serve
+      - --port
+      - "3904"
+      - --protocol
+      - http
     volumes:
       - sites:/home/frappe/frappe-bench/sites
       - logs:/home/frappe/frappe-bench/logs
@@ -112,7 +119,7 @@ services:
     command:
       - nginx-entrypoint.sh
     environment:
-      BACKEND: backend:8000
+      BACKEND: backend:3904
       FRAPPE_SITE_NAME_HEADER: frontend
       SOCKETIO: websocket:3901
       UPSTREAM_REAL_IP_ADDRESS: 127.0.0.1
